@@ -17,8 +17,31 @@ namespace Lab_3._1
             bool parseBool = false, repeat = true;
             string inputString;
 
+
+
             do
             {
+                Console.WriteLine("Would you like to see a list of students?: ");
+                inputString = Console.ReadLine();
+                while (inputString != "yes" && inputString != "no")
+                {
+                    Console.WriteLine("That was not a valid input. Please input" +
+                        " “yes” or “no”: ");
+                    inputString = Console.ReadLine();
+                }
+                if (inputString == "yes")
+                {
+                    for (int i = 0; i < students.Length; i++)
+                    {
+                        Console.WriteLine($"{i+1}. {students[i]}");
+                    }
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine();
+                }
+
                 /**/
                 Console.Write($"Which student would you like to learn more about? " +
                         $"(enter a number 1-{students.Length}): ");
